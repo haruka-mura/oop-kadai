@@ -1,0 +1,2 @@
+class CreateUserAndSendMail < ApplicationRecord
+end
