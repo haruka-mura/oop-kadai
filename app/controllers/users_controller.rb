@@ -17,8 +17,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    create_user_and_send_mail = CreateUserAndSendMail.new(@user)
 
-      if @user.save
+      if create_user_and_send_mail.save
         redirect_to @user, notice: 'User was successfully created.'
       else
         render :new
